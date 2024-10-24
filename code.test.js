@@ -57,3 +57,7 @@ var graph8 = [
 ];
 // Duplicate graphs, return true
 assert(JSON.stringify(are_isomorphic(graph7, graph8)) == JSON.stringify(true));
+
+var graph9 = [];
+var graph10 = [];
+assert(JSON.stringify(are_isomorphic(graph9, graph10)) == JSON.stringify(true));
