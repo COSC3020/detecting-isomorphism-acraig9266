@@ -6,26 +6,42 @@ function are_isomorphic(graph1, graph2) {
     }
     for (i = 0; i < graph1Size; i++) {
         node1 = graph1[i];
-        console.log("New Node 1")
+        //console.log("New Node 1")
         for (j = 0; j < graph2Size; j++) {
-            result = nodeCompare(node1, graph2[j], j);
+            node2 = graph2[j].slice();
+            console.log(node2);
+            result = nodeMatch(node1, node2, i, j);
+            //console.log("Graph 1: ", graph1);
+            //console.log("Graph 2: ", graph2)
+            console.log(result);
         }
     }
-
     return true;
 }
 
-function nodeCompare(node1, node2, j) {
-    console.log("Node 1: ", node1);
-    console.log("Node 2: ", node2);
-    for (k = 0; k + j < node2.length; k++) {
-        stack.push(node2[k + j]);
+function nodeMatch(node1, node2, i, j) {
+    //console.log("Node 1: ", node1);
+    //console.log("Node 2: ", node2);
+    //console.log(node2);
+    //console.log(swappedNode);
+    if (i != j) {
+        node2 = swap(node2, i, j)
     }
-    for (l = 0; l < j; l++) {
-        stack.push(node2[l]);
+    //console.log("New Node 2: ", node2);
+    for (k = 0; k < node1.length; k++) {
+        //console.log(node1[k], node2[k]);
+        if (node1[k] != node2[k]) {
+            return false;
+        }
     }
-    console.log("Stack: ", stack);
-    return;
+    return true;
+}
+
+function swap(node, i, j) {
+    tmp = node[i];
+    node[i] = node[j]
+    node[j] = tmp;
+    return node;
 }
 
 
@@ -40,6 +56,3 @@ var graph2 = [
     [1, 0, 1],
     [1, 1, 0]
 ];
-
-are_isomorphic(graph1, graph2);
-
