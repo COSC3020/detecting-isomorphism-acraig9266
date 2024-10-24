@@ -2,9 +2,12 @@ function are_isomorphic(graph1, graph2) {
     nodesMatched = 0;
     graph1Size = Object.keys(graph1).length;
     graph2Size = Object.keys(graph2).length;
+    graph1 = Object.values(graph1);
+    graph2 = Object.values(graph2);
     if (graph1Size != graph2Size) {
         return false;
     }
+    node1 = graph1[0];
     for (i = 0; i < graph1Size; i++) {
         node1 = graph1[i];
         for (j = 0; j < graph2Size; j++) {
@@ -20,6 +23,9 @@ function are_isomorphic(graph1, graph2) {
 }
 
 function nodeMatch(node1, node2, i, j) {
+    if (node2 == undefined) {
+        return false;
+    }
     if (i != j) {
         node2 = swap(node2, i, j)
     }
