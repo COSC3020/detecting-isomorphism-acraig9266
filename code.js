@@ -20,9 +20,6 @@ function are_isomorphic(graph1, graph2) {
 }
 
 function nodeMatch(node1, node2, i, j) {
-    if (node2 == undefined) {
-        return false;
-    }
     if (i != j) {
         node2 = swap(node2, i, j)
     }
