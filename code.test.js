@@ -61,3 +61,17 @@ assert(JSON.stringify(are_isomorphic(graph7, graph8)) == JSON.stringify(true));
 var graph9 = [];
 var graph10 = [];
 assert(JSON.stringify(are_isomorphic(graph9, graph10)) == JSON.stringify(true));
+
+// New graphs demonstrating functionality with differently named nodes
+var graph11 = {
+    E: [0, 1, 1],
+    F: [1, 0, 1],
+    G: [1, 0, 0]
+};
+var graph12 = {
+    A: [0, 0, 1],
+    B: [1, 0, 1],
+    C: [1, 1, 0]
+};
+// Isomorphic graphs, return true
+assert(JSON.stringify(are_isomorphic(graph11, graph12)) == JSON.stringify(true));
