@@ -1,7 +1,7 @@
-function are_isomorphic(graph1, graph2) {
+function are_isomorphic(graph1 = [], graph2 = []) {
     nodesMatched = 0;
-    graph1Size = Object.keys(graph1).length;
-    graph2Size = Object.keys(graph2).length;
+    graph1Size = Object.values(graph1).length;
+    graph2Size = Object.values(graph2).length;
     graph1 = Object.values(graph1);
     graph2 = Object.values(graph2);
     if (graph1Size != graph2Size) {
