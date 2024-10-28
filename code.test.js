@@ -74,7 +74,7 @@ var graph11 = {
     G: [0, 1, 0]
 }
 // Duplicate graphs with differently named nodes
-assert(JSON.stringify(are_isomorphic(graph9, graph10)) == JSON.stringify(true));
+assert(JSON.stringify(are_isomorphic(graph10, graph11)) == JSON.stringify(true));
 
 var graph12 = {
     'a':            [0, 1, 1],
@@ -88,4 +88,4 @@ var graph13 = [
     [1, 1, 0]
 ];
 // Isomorphic graphs with 1 containing named nodes and 1 containing unnamed nodes(array indexed)
-assert(JSON.stringify(are_isomorphic(graph11, graph12) == JSON.stringify(true)));
+assert(JSON.stringify(are_isomorphic(graph12, graph13) == JSON.stringify(true)));
